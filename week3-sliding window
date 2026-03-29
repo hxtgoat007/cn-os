@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, ack;
+    int p = 0;
+
+    printf("Enter number of frames: ");
+    scanf("%d", &n);
+
+    while (p < n)
+    {
+        printf("Sending frame %d\n", p);
+
+        printf("Enter ACK (1 for received, 0 for lost): ");
+        scanf("%d", &ack);
+
+        if (ack == 1)
+        {
+            printf("ACK received for frame %d\n", p);
+            p++;
+        }
+        else
+        {
+            printf("ACK lost. Resending frame %d\n", p);
+        }
+    }
+
+    printf("All frames sent successfully\n");
+
+    return 0;
+}
